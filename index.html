@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="InterDance: Reactive 3D Dance Generation with Realistic Duet Interactions">
+  <meta name="keywords" content="Motion Generation, Music to Dance, Human-Human Interactions">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InterDance: Reactive 3D Dance Generation with Realistic Duet Interactions</title>
+
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</style>
+
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">InterDance: Reactive 3D Dance Generation 
+            with Realistic Duet Interactions </h1>
+          <!-- <h2 class="title is-4 publication-title">This page is under construction🔨</h2> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/inter-dance/interDance_API"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <!-- Dataset Link.  -->
+              
+
+              <span class="link-block">
+                <a href="https://inter-dance.github.io/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data is coming</span>
+                </a>
+                <p>
+                  The complete code for training and testing, along with the dataset, will be publicly available. 
+                </p>
+
+           
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humans can perform a variety of interactive motions, among which two-person dance is one of the most challenging interactions. However, in terms of computer motion generation, current work is still unable to generate high-quality interactive motion, especially in the field of duet dance. On the one hand, this is caused by the lack of large-scale high-quality datasets. On the other hand, it arises from the incomplete representation of interactive motion and the lack of fine-grained optimization of interactions. To address these challenges, we propose a duet dance dataset that significantly enhances motion quality, data scale, and the variety of dance genres. Based on this dataset, we propose a new motion representation that can accurately and comprehensively describe interactive motion. We further introduce a diffusion-based algorithm with an interaction refine guidance strategy to optimize the realism of interactions progressively. Experiments demonstrate the effectiveness of our dataset and algorithm. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class='section'></section>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">InterDance Demo</h2>
+      <div>
+    <div>
+  <div>
+  <div>
+    <iframe src="https://www.youtube.com/embed/Zi75P4GPoN8?vq=hd1080" width="800" height="450" title="Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</section>
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data Examples (Quick Scan)</h2>
+        <div>
+        This section showcases the dances in the InterDance dataset.
+		<!-- <div><a href="./gallery.html" style="color:cornflowerblue;padding:0;border:none;background:none">▶ More Examples on InterDance Gallery</a></div> -->
+		<table>
+		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/4vYpuA74BHw" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Rumba</span>
+              </div>
+          </td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/qekhfSb5pnI" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Cha Cha</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/LkxWezDhd00" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Waltz</span>
+              </div>
+          </td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/6gVjw98Y-Ak" title="quick show Jazz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Jazz</span>
+		            </div>
+        		</td>
+            
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/Di284unwZuY" title="quick show Shenyun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Shenyun</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/5cVuJ3ryzPM" title="quick show Jive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Jive</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/i8ccKw-Kvzg" title="quick show Tai" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Tai</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/D8HCZMZpTBc" title="quick show Uighur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Uighur</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/jAf1icyxF9M" title="quick show Hantang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Hantang</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/Fj0dQAO43Rg" title="quick show Hiphop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Hiphop</span>
+		            </div>
+        		</td>
+			</tr>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/1bw2m89S5hE" title="quick show Dunhuang" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Dunhuang</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/VgaHs3fppgE" title="quick show Kpop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Kpop</span>
+            </div>
+        </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/ps4upNMSH18" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Urban</span>
+        </div>
+    </td>
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/_WGpd9hLAwo" title="quick show Miao" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Miao</span>
+        </div>
+    </td>
+  </tr>
+  <tr style="display:table-row">
+    <td>
+        <div>
+    <iframe src="https://www.youtube.com/embed/RHZ_AuWRirY" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div style="text-align: center; font-size: large;">
+            <span style="font-style:italic">Samba</span>
+        </div>
+    </td>
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Reactive Dance Generation</h2>
+        <div>
+        This section showcases the dances generated by our method.
+        <div>
+        The reative dance generation task need to generate the follower's dance from given music and leader's dance.
+		<table>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/qpgTAp7tGlI" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Rumba (React)</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/993VZD2tnP0" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Waltz (React)</span>
+		            </div>
+        		</td>
+			</tr>
+		    <tr style="display:table-row">
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/xud-cF6KosE" title="quick show Sumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Sumba (React)</span>
+		            </div>
+        		</td>
+		        <td>
+		            <div>
+						<iframe src="https://www.youtube.com/embed/YenNeLgcN4g" title="quick show Shenyun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		            </div>
+		            <div style="text-align: center; font-size: large;">
+		                <span style="font-style:italic">Shenyun (React)</span>
+		            </div>
+        		</td>
+			</tr>
+		    
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/Ys0tfI1S2lo" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Samba (React)</span>
+              </div>
+          </td>
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/XreF-ZzCtd4" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Waltz (React)</span>
+              </div>
+          </td>
+    </tr>
+      <tr style="display:table-row">
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/lk1vWttapp8" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Rumba (React)</span>
+              </div>
+          </td>
+          <td>
+              <div>
+          <iframe src="https://www.youtube.com/embed/emdwRPOvJNA" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div style="text-align: center; font-size: large;">
+                  <span style="font-style:italic">Urban (React)</span>
+              </div>
+          </td>
+    </tr>
+      
+  </table>
+
+  <table>
+    <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/RYKiQniIrow" title="quick show ShenYun" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">ShenYun (React)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/RObRc_MwjHw" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (React)</span>
+            </div>
+        </td>
+  </tr>
+    <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/fnI4q2R8DZY" title="quick show Sumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Sumba (React)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/iNSjoaNptU0" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (React)</span>
+            </div>
+        </td>
+  </tr>
+    
+</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Duet Dance Generation</h2>
+        <div>
+        This section showcases the dances generated by our method. 
+        <div>The duet dance generation need to generate two-person's dance from given music.
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/IBRCYLFSBXc" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/HMxtquI2Xds" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/58oq653TEPE" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Chacha (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/CSzjMFOXyVQ" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/qglOmcadxsA?feature=share" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/m9IX8W7Y8Vc" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/PBWBhaRwdUQ" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/d6GX1L6PYtI" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Duet Dance Generation</h2>
+        <div>
+        This section showcases the dances generated by our method. 
+        <div>The duet dance generation need to generate two-person's dance from given music.
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/YGE2IqGVaR4" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/1zB6eHoP-LA" title="quick show Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/58oq653TEPE" title="quick show Chacha" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Chacha (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/U9woaAYQ4p4" title="quick show Samba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Samba (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/CObbP7AQ8aM" title="quick show Kpop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Kpop (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/qpfZlntzILE" title="quick show HipHop" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">HipHop (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/j5kWsz_dY68" title="quick show Uygur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Uygur (duet)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/_f0LT6NZySY" title="quick show Chinese" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Chinese (duet)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Long Reactive Dance Generation</h2>
+        <div>
+        This section showcases the long dances generated by our method. 
+        <div>
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/kvxYKuQvtjY" title="quick show Urban" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Urban (long)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/YVL0kj8f_08" title="quick show Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (long)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Repaint results w/o leader label</h2>
+        <div>
+        we applied the diffusion repainting technique and directly used the reactive dance generation model to generate the follower dance under the control of leader motion (directly testing and without the leader contact label). 
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/YLF-U_rhSzE" title="repaint Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (repaint)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/ro3cR2iL57c" title="repaint Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (repaint)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/jUEVr2_Bkr4" title="repaint Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (repaint)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/JuW1tg8CIN0" title="repaint Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (repaint)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Reactive results trained w/o leader contact label</h2>
+        <div>
+          we retrained our network without providing the leader contact label to generate the follower dance.
+		<table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/EZMWPSgSJCc" title="w/o leader contact Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (w/o leader contact)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/nm_Kb6V4W8E" title="w/o leader contact Waltz" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Waltz (w/o leader contact)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+
+    <table>
+      <tr style="display:table-row">
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/fcwXJyFUxMI" title="w/o leader contact Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (w/o leader contact)</span>
+            </div>
+        </td>
+        <td>
+            <div>
+        <iframe src="https://www.youtube.com/embed/JIt7k_z_W4c" title="w/o leader contact Rumba" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; font-size: large;">
+                <span style="font-style:italic">Rumba (w/o leader contact)</span>
+            </div>
+        </td>
+  </tr>
+		</table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<a href="https://clustrmaps.com/site/1bw8l" title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=gyNaovoCDCnFAlIcQkc_74fe9iuwCBzj29JNZY0oo08&cl=ffffff"  height="1" width="1"></a>
+<section class='section'>
+  <div class="container is-max-desktop content">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">License</h2>
+        <div>
+          The dataset and code will be officially released alongside the camera-ready version of the paper, for academic research purposes only.
+	    </div>
+      </div>
+    </div>
+  </div>
+</section>   
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template was borrowed from Duolando and Nerfies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
