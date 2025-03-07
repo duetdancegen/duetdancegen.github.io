@@ -842,7 +842,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Repaint results for Dance Accompaniment</h2>
         <div>
-        We applied the diffusion repainting technique and directly used the dance accompaniment model to generate the follower dance under the control of leader motion (directly testing and without the leader contact label). 
+        We applied the diffusion repainting technique and directly used the model trained on the duet dance generation task to generate the follower dance. During the inference, the noise of the leader's  dance $\bm{x}_n^l$ is replaced with a given leader's dance $\bm{x}^l$ except the leader's contact label.
 		<table>
       <tr style="display:table-row">
         <td>
